@@ -42,6 +42,13 @@ function putOperatorToResult(arr) {
         }
     }
 }
+function calculate() {
+    let result = eval(newText.innerHTML);
+    newText.innerHTML = result;
+ }
+
+isEqual.addEventListener('click', calculate);
+
 
 
 function clear() {
