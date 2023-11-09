@@ -1,16 +1,14 @@
-const numArr = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-const operators = ['plus', 'minus', 'multiply', 'divide'];
+
+
 const isEqual = document.getElementById('isEqual');
 const result = document.getElementById('result');
 
-let inBetweenResult = [];
+let inBetweenResult = ''
 let newText = document.createElement('div');
 result.append(newText)
 
-const resultDisplay = result.querySelector('div').style.display;
-
-
-function putNumToResult(arr) {
+function putNumToResult() {
+    const arr = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
     for (let i = 0; i < arr.length; i++) {
         document.getElementById(arr[i]).addEventListener('click', () => {
             newText.innerHTML += arr[i];
@@ -24,7 +22,8 @@ function changeOperatorSymbol(origSymbol, newSymbol) {
     })
 }
 
-function putOperatorToResult(arr) {
+function putOperatorToResult() {
+    const arr = ['plus', 'minus', 'multiply', 'divide'];
     for (let i =0; i < arr.length; i++) {
         switch (arr[i]) {
             case 'plus':
@@ -57,6 +56,6 @@ function clear() {
     });
 }
 
-putNumToResult(numArr);
-putOperatorToResult(operators);
+putNumToResult();
+putOperatorToResult();
 clear();
